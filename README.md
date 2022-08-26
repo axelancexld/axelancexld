@@ -1,4 +1,4 @@
-[![Ewing]
+
 <div align="center">
 <h3>Contact İnformation</h3>
 <a href="https://discord.gg/210" target"blank_"><img src="https://img.shields.io/badge/EWING%20-111111.svg?&style=for-the-badge&logo=discord&logoColor=white"></a>
