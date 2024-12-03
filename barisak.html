@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurla Barışma Sitesi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://static1.srcdn.com/wordpress/wp-content/uploads/2023/04/lightning_mcqueen_on_a_racetrack_in_cars.jpg') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            text-shadow: 2px 2px #ff0000;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-yes {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .celebration {
+            display: none;
+            text-align: center;
+        }
+
+        .celebration img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .celebration h2 {
+            font-size: 2.5rem;
+            color: #ff0000;
+            text-shadow: 2px 2px #333;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Tarayıcınız audio elementini desteklemiyor.
+    </audio>
+    
+    
+
+    <div class="container">
+        <h1>Nurcum lutfen Barisalim mi? ❤️</h1>
+        <div class="buttons">
+            <button class="btn btn-yes" onclick="yesClick()">Evet</button>
+            <button class="btn btn-no" onmouseover="moveButton()" onclick="moveButton()">Hayır</button>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <h2>YEEEEEEEEEEEEEEEEEEEEY SONUNDA!</h2>
+        <img src="https://i.pinimg.com/originals/b5/b3/d3/b5b3d3333bdb6fc2e4d034e37eea9dfb.jpg" alt="Kutlama Görseli">
+    </div>
+
+    <script>
+        function yesClick() {
+            document.querySelector('.container').style.display = 'none';
+            const celebrationDiv = document.getElementById('celebration');
+            celebrationDiv.style.display = 'block';
+        }
+
+        function moveButton() {
+            const noButton = document.querySelector('.btn-no');
+            const container = document.querySelector('.container');
+
+            const containerRect = container.getBoundingClientRect();
+            const noButtonRect = noButton.getBoundingClientRect();
+
+            let newTop = Math.random() * (containerRect.height - noButtonRect.height);
+            let newLeft = Math.random() * (containerRect.width - noButtonRect.width);
+
+            noButton.style.position = 'absolute';
+            noButton.style.top = `${newTop}px`;
+            noButton.style.left = `${newLeft}px`;
+        }
+    </script>
+</body>
+</html>
